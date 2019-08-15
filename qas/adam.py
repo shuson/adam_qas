@@ -235,6 +235,13 @@ def run():
 
     main(sys.argv[1:])
 
+def get_answer(q):
+    
+    qas = QasInit("en", 3, False, "")
+    qas.get_question_doc(q)
+    qas.process_question()
+    
+    return qas.process_answer()
 
 if __name__ == "__main__":
     run()
